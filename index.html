@@ -43,11 +43,11 @@
 
              The year during which the edit URL expires.
 
-         edit-exp-month:   09
+         edit-exp-month:   11
 
              The month during which the edit URL expires.
 
-         edit-exp-day:     20
+         edit-exp-day:     13
 
              The day on which the edit URL expires.
 
@@ -69,7 +69,7 @@
          date is before the date the edit URL expires, then redirect to the
          edit URL; else redirect to the view URL. -->
     <script>
-      if (new Date() < new Date(2021, (09 - 01), 20)) {
+      if (new Date() < new Date(2021, (11 - 01), 13)) {
         window.location.href = "https://edit.example.com";
       } else {
         window.location.href = "https://view.example.com";
