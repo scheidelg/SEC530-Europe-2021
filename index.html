@@ -1,24 +1,35 @@
 <!-- Redirect to the OneNote notebook for this class.
 
-     The class will have an 'edit' link through which the class can access the
+     The class will have an 'edit' URL through which the class can access the
      notebook for editing.  This page will, when first set up, redirect to
-     that edit link.
+     that edit URL.
 
-     The edit link will typically have an expiration date, after which the
-     class will need to use a 'view' link.  This page's JavaScript code will
-     start redirecting to the view link one day before the edit link's
+     The edit URL will typically have an expiration date, after which the
+     class will need to use a 'view' URL.  This page's JavaScript code will
+     start redirecting to the view URL one day before the edit URL's
      expiration date.
 
      To account for the possibility that the JavaScript doesn't work for a
      client, an HTTP redirect is also used in the HTML header.  Similarly,
      the HTML body includes a message identifying the redirect target.
 
-     If the 'edit' link does have an expiration date, then remember to come
-     back just ahead of the expiration date and update the hard-coded HTTP
-     redirect to use the view link.  Again, just to account for the
-     possibility that the JavaScript doesn't work for a client.
+     -----
+     How to use:
 
-     Values that need to be updated for a given class:
+      1. Set up DNS and primary URL to resolve to this page.
+
+      2. Set up the edit and view URLs.
+
+      2. Update the variables in the comments below, the JavaScript code,
+         and the HTML code.
+
+      3. If the edit URL does have an expiration date, then remember to come
+         back just ahead of the expiration date and update the hard-coded HTTP
+         redirect to use the view URL.  Again, just to account for the
+         possibility that the JavaScript doesn't work for a client.
+
+     -----
+     Variables that need to be updated for a given class:
 
          class-name-short: SEC530
 
@@ -30,23 +41,23 @@
 
          edit-exp-year:    2021
 
-             The year during which the edit link expires.
+             The year during which the edit URL expires.
 
          edit-exp-month:   09
 
-             The month during which the edit link expires.
+             The month during which the edit URL expires.
 
          edit-exp-day:     20
 
-             The day on which the edit link expires.
+             The day on which the edit URL expires.
 
-         edit-link:        https://edit.example.com
+         edit-URL:        https://edit.example.com
 
-             The OneNote link that allows edit access to the OneNote notebook.
+             The OneNote URL that allows edit access to the OneNote notebook.
 
-         view-link:        https://view.example.com
+         view-URL:        https://view.example.com
 
-             The OneNote link that allows view access to the OneNote notebook.
+             The OneNote URL that allows view access to the OneNote notebook.
 
 -->
 
@@ -54,11 +65,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Use JavaScript to redirect based on current date.  If on or before
-         the edit link expires, then redirect to the edit link; else redirect
-         to the view link. -->
+    <!-- Use JavaScript to redirect based on current date.  If before the date
+         the edit URL expires, then redirect to the edit URL; else redirect
+         to the view URL. -->
     <script>
-      if (new Date() <= new Date(2021, 09, 20)) {
+      if (new Date() < new Date(2021, 09, 20)) {
         window.location.href = "https://edit.example.com";
       } else {
         window.location.href = "https://view.example.com";
@@ -66,13 +77,13 @@
     </script>
 
     <!-- HTTP redirect in case the JavaScript fails; initially use the edit
-         link; just ahead of edit link expiration, update to the view
-         link. -->
+         URL; just ahead of edit URL expiration, update to the view
+         URL. -->
     <meta http-equiv="Refresh" content="0; url=https://http-view.example.com" />
   </head>
   <body>
-    <!-- Display message about redirect.  Initially use the edit link; just
-         ahead of edit link expiration, update to the view link. -->
+    <!-- Display message about redirect.  Initially use the edit URL; just
+         ahead of edit URL expiration, update to the view URL. -->
     <p>Redirecting to <a href="https://body-view.example.com">the OneNote notebook</a> for SEC530 at SANS Europe Online October 2021.</p>
   </body>
 </html>
