@@ -55,13 +55,13 @@
 <html>
   <head>
     <!-- Use JavaScript to redirect based on current date.  If on or before
-         the edit link expires, then redirect to the view link; else redirect
-         to the edit link. -->
+         the edit link expires, then redirect to the edit link; else redirect
+         to the view link. -->
     <script>
       if (new Date() <= new Date(2021, 09, 20)) {
-        window.location.href = "https://view.example.com";
-      } else {
         window.location.href = "https://edit.example.com";
+      } else {
+        window.location.href = "https://view.example.com";
       }
     </script>
 
