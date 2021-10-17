@@ -51,14 +51,13 @@
 
              The day on which the edit URL expires.
 
-         edit-URL:        https://edit.example.com
+         edit-URL:        https://1drv.ms/o/s!AmX2EQD23qhmiUf8yvAOfFU4S69v
 
              The OneNote URL that allows edit access to the OneNote notebook.
 
-         view-URL:        https://view.example.com
+         view-URL:        https://1drv.ms/u/s!AmX2EQD23qhmiUcyB4D34aGKfKlZ
 
              The OneNote URL that allows view access to the OneNote notebook.
-
 -->
 
 
@@ -70,20 +69,20 @@
          edit URL; else redirect to the view URL. -->
     <script>
       if (new Date() < new Date(2021, (11 - 01), 13)) {
-        window.location.href = "https://edit.example.com";
+        window.location.href = "https://1drv.ms/o/s!AmX2EQD23qhmiUf8yvAOfFU4S69v";
       } else {
-        window.location.href = "https://view.example.com";
+        window.location.href = "https://1drv.ms/u/s!AmX2EQD23qhmiUcyB4D34aGKfKlZ";
       }
     </script>
 
     <!-- HTTP redirect in case the JavaScript fails; initially use the edit
          URL; just ahead of edit URL expiration, update to the view
          URL. -->
-    <meta http-equiv="Refresh" content="0; url=https://http-view.example.com" />
+    <meta http-equiv="Refresh" content="0; url=https://1drv.ms/u/s!AmX2EQD23qhmiUcyB4D34aGKfKlZ" />
   </head>
   <body>
     <!-- Display message about redirect.  Initially use the edit URL; just
          ahead of edit URL expiration, update to the view URL. -->
-    <p>Redirecting to <a href="https://body-view.example.com">the OneNote notebook</a> for SEC530 at SANS Europe Online October 2021.</p>
+    <p>Redirecting to <a href="https://1drv.ms/u/s!AmX2EQD23qhmiUcyB4D34aGKfKlZ">the OneNote notebook</a> for SEC530 at SANS Europe Online October 2021.</p>
   </body>
 </html>
